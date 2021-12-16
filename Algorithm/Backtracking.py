@@ -10,15 +10,12 @@ leetcode：22         回溯算法
 “()(())”,
 “()()()”
 ]
-1、左括号不能呢大于N
-2、右括号不能大于左括号
-
 '''
 def baidu(n):
-    ans=[]
+    result=[]
     def backtracking(S,left,right):
         if len(S) == 2*n:
-            ans.append(''.join(S))
+            result.append(''.join(S))
             return
         if left < n:
             S.append("(")
@@ -29,6 +26,5 @@ def baidu(n):
             backtracking(S,left,right+1)
             S.pop()
     backtracking([],0,0)
-    return ans
-
+    return result
 print(baidu(3))
